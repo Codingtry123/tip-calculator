@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+ <script src="script.js" defer></script>
+<title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="head">
+    SPLI<br>TTER
+
+  </div>
+<div class="main">
+  <div class="left">
+    <div class="bill">
+  Bill
+    </div>
+    <div class="input1">
+      <input type="text" oninput="this.value = Math.abs(this.value)">
+    </div>
+    <div class="select">
+  <div class="i">Select Tip %</div>
+  <div class="grid">
+  <div class="i1"><button>5%</button></div>
+  <div class="i2"><button>10%</button></div>
+  <div class="i3"><button>15%</button></div>
+  <div class="i4"><button>25%</button></div>
+  <div class="i5"><button>50%</button></div>
+  <div class="i6"><button>Custom</button></div>
+  </div>
+    </div>
+    <div class="num">
+  Number of People
+    </div>
+    <div class="input2" oninput="this.value = Math.abs(this.value)">
+      <input type="text">
+    </div>
+  </div>
+  
+  <div class="right">
+    <div class="tip">
+      <div class="b1">
+      <div class="t1">
+  Tip Amount</div>
+    
+  <div class="t2"> / person</div>
+</div>
+  <div class="amount">
+ $
+  </div>
+    </div>
+    <div class="total">
+      <div class="b2">
+  <div class="t1">Total</div>
+  <div class="t2">/ person</div>
+      </div>
+  <div class="total1">$</div>
+    </div>
+    
+ 
+<div class="button">
+  <button type="submit">Reset</button>
+</div>
+  </div>
+  </div>
+</div>
+  
+ 
+</body>
+</html>

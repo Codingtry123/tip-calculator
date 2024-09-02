@@ -1,0 +1,367 @@
+:root{
+    --StrongCyan: hsl(172, 67%, 45%);
+
+
+--VeryDarkCyan: hsl(183, 100%, 15%);
+--DarkGrayishCyan: hsl(186, 14%, 43%);
+--GrayishCyan: hsl(184, 14%, 56%);
+--LightGrayishCyan: hsl(185, 41%, 84%);
+--VeryLightGrayishCyan: hsl(189, 41%, 97%);
+--White: hsl(0, 0%, 100%);
+--FontSize: 24px;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: 'Space Mono', sans-serif;
+  font-weight: 700;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */ p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--LightGrayishCyan);
+}
+.main{
+    background-color: var(--White);
+    display: grid;
+    padding:30px;
+    border-radius: 10px;
+    grid-template-columns:repeat(2, 435px);
+    width:930px;
+        height:390px;
+}
+.head{
+    color:var(--DarkGrayishCyan);
+    font-size:30px;
+    position: absolute;
+    top: 1.5rem;
+    margin: 0 auto;
+}
+.left{
+    grid-column: 1;
+    padding: 15px;
+  
+   color: var(--GrayishCyan);
+   padding-right: 0px;
+}
+.right{
+    grid-column: 2;
+    padding: 25px;
+    background-color: var(--VeryDarkCyan);
+    border-radius: 15px;
+    width: 435px;
+   
+    padding-top: 3rem;
+    padding-left:2.4rem;
+    padding-bottom: 2.4rem;
+    height:330px;
+    position: relative;
+}
+.bill{
+    margin-bottom: 0.2rem;
+}
+.input1, .input2{
+width: 355px;
+position: relative;
+}
+input{
+   color:var(--DarkGrayishCyan);
+    
+    outline: none;
+    width: 355px;
+    background-color: var(--VeryLightGrayishCyan);
+    border-radius: 2px;
+    border-color: var(--VeryLightGrayishCyan);
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   text-align: right;    padding-right: 10px;
+   
+}
+.input1:before, .input2:before {
+	position: absolute;
+    content:url('images/icon-dollar.svg');
+    left:10px;
+	top:6px;
+    font-size: 16px;
+ 	}
+.input2:before{
+    content: url('images/icon-person.svg');
+}
+.input1 {
+    margin-bottom: 1.5rem;
+}
+.grid{
+    display:grid;
+    width: 355px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap:20px;
+    height: 100px;
+}
+.i{
+    margin-bottom: 0.6rem;
+}
+.i1, .i2, .i3, .i4, .i5, .i6{
+    background-color: var(--VeryDarkCyan);
+    display: flex;
+    border-radius: 4px;
+    color:var(--White);
+    justify-content: center;
+    align-items: center;
+
+}
+.i1 button, .i2 button , .i3 button, .i4 button, .i5 button, .i6 button{
+    background-color: var(--VeryDarkCyan);
+    color:var(--White);
+}
+.i6 button{
+    color:var(--DarkGrayishCyan);
+    background-color: var(--VeryLightGrayishCyan);
+}
+.selected button {
+    color:var(--VeryDarkCyan);
+    background-color: var(--GrayishCyan);
+}
+
+  
+.i1{
+grid-row: 1;
+grid-column: 1;
+}
+
+.i2{
+    grid-row: 1;
+    grid-column: 2;   
+}
+.i3{
+    grid-row: 1;
+    grid-column: 3;   
+}
+.i4{
+    grid-row: 2;
+    grid-column: 1;   
+}
+.i5{
+    grid-row: 2;
+    grid-column: 2;   
+}
+.i6{
+    grid-row: 2;
+    grid-column: 3;   
+}
+.select{
+    margin-bottom: 1.5rem;
+}
+.t1{
+    color:var(--White);
+}
+.t2{
+    color:var(--LightGrayishCyan);
+    font-size: 16px;
+}
+.tip{
+    margin-bottom: 1.2rem;
+    position:relative;
+}
+.total{
+    margin-bottom: 6.8rem;
+    position: relative;
+
+}
+.button{
+ 
+    width:375px;
+    position: absolute;
+    bottom:30px;
+    left:30px;
+   
+}
+button{
+    width: 100%;
+    padding:7px;
+    color:var(--VeryDarkCyan);
+    background-color: var(--StrongCyan);
+    border-radius: 5px;
+}
+.tip, .total {
+    position: relative; /* Ensure the child elements are positioned relative to this container */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    
+  }
+.amount, .total1{
+    color:var(--StrongCyan);
+    font-size: 50px;
+    grid-column: 3;
+  
+
+}
+.b1, .b2{
+    grid-column: 1;
+}
+
+
+@media screen and (max-width:785px) {
+    html{
+        height: auto;
+    }
+   body{
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+   }
+    .main{
+    grid-template-columns: 1fr;
+    grid-template-rows: 420px 280px;
+    height:1000px;
+    width:100%;
+    padding:20px;
+  
+   }
+   .head{
+    position: relative;
+    padding:3rem;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .left{
+    grid-row: 1;
+    margin: 0 auto;
+    width:335px;
+    height: 220px;
+    margin-bottom: 0;
+   padding-bottom: 0;
+
+
+   }
+   .right{
+    
+    margin-top: 0;
+    grid-row: 2;
+    grid-column: 1;
+    margin: 0 auto;
+    width:335px;
+    position: relative;
+    padding:20px;
+    left:7.5px;
+    align-items: center;
+    height: 280px;
+   }
+   .button button{
+    width:280px;
+  
+   }
+  
+   .select{
+    width: 320px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 3.2rem;
+   }
+   .input1, .input, .select, input, .grid{
+    width:320px;
+   }
+   .grid{
+    width:100%;
+   }
+   .i1{
+    grid-row: 1;
+    grid-column: 1;
+    width: 150px;
+    }
+    
+    .i2{
+        width: 150px;
+        grid-row: 1;
+        grid-column: 2;   
+    }
+    .i3{
+        grid-row: 2;
+        grid-column: 1;   
+    }
+    .i4{
+        grid-row: 2;
+        grid-column: 2;   
+    }
+    .i5{
+        grid-row: 3;
+        grid-column: 1;   
+    }
+    .i6{
+        grid-row: 3;
+        grid-column: 2;   
+    }
+    .input2{
+        position: relative;
+        margin-top: 0.6rem;
+    }
+    .num{
+        position: relative;
+        margin-top: 5.6rem;
+    }
+
+}
+
