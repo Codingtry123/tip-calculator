@@ -6,11 +6,12 @@ let i3 = document.getElementsByClassName('i3')[0];
 let i4 = document.getElementsByClassName('i4')[0];
 let i5 = document.getElementsByClassName('i5')[0];
 let i6 = document.getElementsByClassName('i6')[0];
+let tex = document.querySelector('.i6 input');
 let arr = [i1, i2, i3, i4, i5, i6];
 let amount = document.getElementsByClassName('amount')[0];
 let total = document.getElementsByClassName('total1')[0];
 let reset = document.querySelector('.button button');
-let billnum, people, per, totalbill, ind;
+let billnum, people, per, totalbill, ind, cus;
 function calcula(){
   if(people && people > 0 && billnum && per){
 
@@ -28,14 +29,51 @@ arr.forEach((item)=>{item.addEventListener('click', ()=>{
   else if(arr.indexOf(item) == 3){
     per = 0.25;
   }
+  else if(arr.indexOf(item) == 4){
+    per = 0.5;
+  }
+  else if(cus){
+    per = cus / 100;
+  }
   else{
-    per = 0.5
   }
 arr.forEach((item1)=>{item1.classList.remove('selected')})
   item.classList.add('selected');
   calcula();
  })}
 )
+tex.addEventListener('input', function(e) {
+  let value = this.value;
+  let cursorPosition = this.selectionStart;
+
+  // Check if the input ends with a "%" and remove it temporarily for number validation
+  if (value.endsWith("%")) {
+      value = value.slice(0, -1); // Remove the last character ("%")
+  }
+
+  // Validate if the value is a number
+  if (value && !isNaN(value)) {
+      cus = value; // Store the valid number
+      per = cus / 100;
+      this.value = value + "%"; // Add "%" back
+      
+      console.log(this.value);
+      calcula();
+      if (cursorPosition > this.value.length - 1) {
+        cursorPosition = this.value.length - 1;
+    }
+    this.setSelectionRange(cursorPosition, cursorPosition);
+  } else if (isNaN(value)) {
+      console.log(value + " is not a valid number");
+      per = cus / 100;
+      this.value = cus + "%"; // Reset to the last valid number
+     
+      calcula();
+      cursorPosition = this.value.length - 1;
+        this.setSelectionRange(cursorPosition, cursorPosition);
+  }
+});
+
 input1.addEventListener('input', function(e){
   billnum = this.value;
   calcula();
@@ -55,5 +93,7 @@ reset.addEventListener('click', function(){
    per = null;
    totalbill = null;
    ind = null;
+   cus = null;
+   tex.value = null;
 
 })
